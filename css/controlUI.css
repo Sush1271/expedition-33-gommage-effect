@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/fonts/Cinzel/Cinzel-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+#control-ui-container {
+  position: fixed;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  --e33-color: #D5CBB2;
+}
+.buttons-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.e33-label {
+  font-family: 'Cinzel', serif;
+  color: var(--e33-color);
+  font-size: 0.9rem;
+}
+.E33-button {
+  font-family: 'Cinzel', serif;
+  padding: 16px 38px;
+  cursor: pointer;
+  background-color: #000000b3;
+  color: var(--e33-color);
+  border: none;
+  position: relative;
+  clip-path: polygon(0% 50%, 15px 0%, calc(100% - 15px) 0%, 100% 50%, calc(100% - 15px) 100%, 15px 100%);
+  transition: transform 0.15s ease-out 0.05s;
+}
+.E33-button.primary { font-size: 1.15rem; }
+.E33-button.secondary { font-size: 0.9rem; }
+.E33-button.disabled { opacity: 0.5; }
+.E33-button.active { background-color: rgba(213,203,178,0.3); }
+.E33-button:hover { transition-delay: 0s; }
+.E33-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--e33-color);
+  --borderSize: 1px;
+  clip-path: polygon(0% 50%, 15px 0%, calc(100% - 15px) 0%, 100% 50%, calc(100% - 15px) 100%, 15px 100%, 0% 50%, var(--borderSize) 50%, calc(15px + 0.5px) calc(100% - var(--borderSize)), calc(100% - 15px - 0.5px) calc(100% - var(--borderSize)), calc(100% - var(--borderSize)) 50%, calc(100% - 15px - 0.5px) var(--borderSize), calc(15px + 0.5px) var(--borderSize), var(--borderSize) 50%);
+  z-index: -1;
+}
+#write-input {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  color: var(--e33-color);
+  margin: 0;
+  padding: 14px;
+  outline: none;
+  border: 1px solid var(--e33-color);
+  background-color: #0000;
+  width: 360px;
+  text-align: center;
+}
+#write-input::placeholder { color: var(--e33-color); opacity: 0.6; }
+@media (max-width: 768px) {
+  .E33-button { padding: 10px 24px; }
+  .E33-button.primary { font-size: 0.7rem; }
+  .E33-button.secondary { font-size: 0.6rem; }
+  #write-input { font-size: 16px; padding: 10px; width: 220px; }
+  #control-ui-container { bottom: 60px; gap: 16px; }
+  .buttons-container { gap: 10px; }
+}

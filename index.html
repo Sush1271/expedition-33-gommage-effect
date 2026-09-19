@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clair Obscur: Expedition 33 WebGPU Gommage Effect | Codrops</title>
+  <link rel="icon" type="image/svg+xml" href="https://tympanus.net/favicon/favicon.svg" />
+  <link rel="stylesheet" type="text/css" href="./css/base.css" />
+  <link rel="stylesheet" type="text/css" href="./css/controlUI.css" />
+  <script>document.documentElement.className='js';</script>
+</head>
+<body class="demo-1">
+  <div id="canvas-container"></div>
+  <div id="control-ui-container">
+    <div class="buttons-container">
+      <button class="E33-button primary" id="gommage-button">GOMMAGE</button>
+      <button class="E33-button primary" id="reset-button">TRY AGAIN</button>
+    </div>
+    <div class="buttons-container">
+      <span class="e33-label">PETALS</span>
+      <button class="E33-button secondary" data-petals="normal">NORMAL</button>
+      <button class="E33-button secondary" data-petals="many">MANY</button>
+      <button class="E33-button secondary" data-petals="stendhal">STENDHAL</button>
+    </div>
+    <input id="write-input" placeholder="WRITE HERE" maxlength="30" />
+  </div>
+  <script type="module" src="./src/experience.js"></script>
+</body>
+</html>
